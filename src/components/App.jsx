@@ -1,18 +1,14 @@
 import React from 'react';
 import "./app.less"
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import Main from "./main/main";
-import Card from "./card/card";
-import Error from "./main/Error";
+import Feed from "./feed/feed";
 
 const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route exact path="/" element={<Main/>} />
-                <Route path="/card/:username/:reponame" element={<Card/>} />
-                <Route path="/error" element={<Error/>} />
-                <Route path="*" element={<Navigate to="/" />} />
+                <Route exact path="/feed" element={<Feed/>} />
+                <Route path="*" element={<Navigate to="/feed" />} />
             </Routes>
         </BrowserRouter>
     );
