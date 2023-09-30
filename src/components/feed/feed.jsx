@@ -4,12 +4,7 @@ import {getPosts} from "../actions/posts";
 import Post from "./post/post";
 
 const Feed = () => {
-    const dispatch = useDispatch()
-    const posts = useSelector(state => state.posts.items)
-
-    useEffect(()=> {
-        dispatch(getPosts())
-    }, [])
+    const { posts } = getData();
 
     return (
         <div>
@@ -22,5 +17,16 @@ const Feed = () => {
         </div>
     );
 };
+
+function getData() {
+    const dispatch = useDispatch()
+    const posts = useSelector(state => state.posts.items)
+
+    useEffect(()=> {
+        dispatch(getPosts())
+    }, [])
+
+    return { posts }
+}
 
 export default Feed;

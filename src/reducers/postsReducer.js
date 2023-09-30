@@ -4,7 +4,6 @@ const defaultState = {
     items: []
 }
 
-
 export default function postsReducer(state = defaultState, action) {
     switch (action.type) {
         case SET_POSTS:

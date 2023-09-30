@@ -7,3 +7,8 @@ export const getPosts = () => {
         dispatch(setPosts(response.data))
     }
 }
+
+export const getPostAuthorByUserID = async (userID, setUser) => {
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${userID}`)
+    setUser(response.data)
+}
