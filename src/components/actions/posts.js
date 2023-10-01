@@ -12,3 +12,8 @@ export const getPostAuthorByUserID = async (userID, setUser) => {
     const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${userID}`)
     setUser(response.data)
 }
+
+export const getPostCommentsByPostID = async (postID, setComments) => {
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postID}/comments`)
+    setComments(response.data)
+}

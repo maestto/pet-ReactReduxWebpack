@@ -11,7 +11,7 @@ const Feed = () => {
             <h1>Post feed</h1>
             <div className="post-feed">
                 {
-                    posts.map(post => <Post post={post}/>)
+                    posts.map(post => <Post post={post} key={post.id}/>)
                 }
             </div>
         </div>
