@@ -8,9 +8,9 @@ export const getPosts = () => {
     }
 }
 
-export const getPostAuthorByUserID = async (userID, setUser) => {
+export const getUserDataByUserID = async (userID, setUserData) => {
     const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${userID}`)
-    setUser(response.data)
+    setUserData(response.data)
 }
 
 export const getPostCommentsByPostID = async (postID, setComments) => {
