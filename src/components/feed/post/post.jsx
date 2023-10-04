@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "./post.less"
 import {getUserDataByUserID, getPostCommentsByPostID} from "../../actions/posts";
 import {NavLink} from "react-router-dom";
+import Comment from "./comment";
 
 const Post = (props) => {
     const post = {
@@ -38,11 +39,7 @@ const Post = (props) => {
 function renderComments(comments) {
     if (Array.isArray(comments)) {
         return comments.map((comment) => (
-            <div className="post-comments-item" key={comment.id}>
-                <h1>{comment.email}</h1>
-                <h2>{comment.name}</h2>
-                <h3>{comment.body}</h3>
-            </div>
+            <Comment comment={comment}/>
         ))
     }
 }
